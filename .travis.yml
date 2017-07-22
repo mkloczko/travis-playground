@@ -1,7 +1,14 @@
 language: c
 sudo: false
+compiler:
+  - clang
+  - gcc
+
+install:
+  - echo ${CC}
+
 script: 
-  - clang --std=c11 test.c -o test
+  - ${CC} --std=c11 test.c -o test
   - ./test
 
 
